@@ -14,6 +14,9 @@ import { FullComponent } from './layouts/full/full.component';
 import { AppHeaderComponent } from './layouts/full/header/header.component';
 import { AppSidebarComponent } from './layouts/full/sidebar/sidebar.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {  HttpClientModule } from '@angular/common/http';
+import { SignupComponent } from './signup/signup.component';
+
 @NgModule({
   declarations: [	
     AppComponent,
@@ -21,7 +24,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     BestSellerComponent,
     FullComponent,
     AppHeaderComponent,
-    AppSidebarComponent
+    AppSidebarComponent,
+    SignupComponent
    ],
   imports: [
     BrowserModule,
@@ -31,7 +35,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     ReactiveFormsModule,
     MaterialModule,
     FlexLayoutModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()
