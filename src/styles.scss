@@ -56,6 +56,9 @@ body {
     --mat-mdc-snack-bar-button-color: #fff !important;
     --mdc-snackbar-supporting-text-color: #fff !important;
   }
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .mat-mdc-snack-bar-container {
   &.black-snackbar {
@@ -63,6 +66,10 @@ body {
     --mat-mdc-snack-bar-button-color: #fff !important;
     --mdc-snackbar-supporting-text-color: #fff !important;
   }
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+
 }
 
 .mat-snack-bar-container {
