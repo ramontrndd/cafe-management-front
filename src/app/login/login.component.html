@@ -1,0 +1,41 @@
+<div class="login__container">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span class="title-center">LOGIN</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-dialog-content class="mat-dialog__container">
+    <form [formGroup]="loginForm">
+    <div>
+
+        <mat-form-field>
+            <mat-label>E-mail</mat-label>
+            <input matInput formControlName="email" required>
+            <mat-error *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid">
+                <span *ngIf="loginForm.controls.email.errors.required"> Este campo é obrigátorio</span>
+                <span *ngIf="loginForm.controls.email.errors.pattern"> Este campo é invalido</span>
+            </mat-error>
+        </mat-form-field>
+      
+        <mat-form-field>
+            <mat-label>Senha</mat-label>
+            <input type="password" matInput formControlName="password" required>
+            <mat-error *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid">
+                <span *ngIf="loginForm.controls.password.errors.required"> Este campo é obrigátorio</span>
+                <span *ngIf="loginForm.controls.password.errors.pattern"> Este campo é invalido</span>
+            </mat-error>
+        </mat-form-field>
+
+    </div>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+    <button  mat-raised-button color="primary" type="submit" (click)="handleSubmit()" [disabled]="!(loginForm.valid && loginForm.dirty)">Entrar</button>
+    <button  mat-raised-button color="primary" mat-dialog-close>Fechar</button>
+   </mat-dialog-actions>
+
+
+  
+</div>

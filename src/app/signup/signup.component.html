@@ -17,20 +17,21 @@
                     <span *ngIf="signupForm.controls.name.errors.pattern"> Este campo é invalido</span>
                 </mat-error>
             </mat-form-field>
-            <mat-form-field>
-                <mat-label>E-mail</mat-label>
-                <input matInput formControlName="email" required>
-                <mat-error *ngIf="signupForm.controls.email.touched && signupForm.controls.email.invalid">
-                    <span *ngIf="signupForm.controls.email.errors.required"> Este campo é obrigátorio</span>
-                    <span *ngIf="signupForm.controls.email.errors.pattern"> Este campo é invalido</span>
-                </mat-error>
-            </mat-form-field>
+
             <mat-form-field>
                 <mat-label>Contato</mat-label>
                 <input matInput formControlName="contactNumber" required>
                 <mat-error *ngIf="signupForm.controls.contactNumber.touched && signupForm.controls.contactNumber.invalid">
                     <span *ngIf="signupForm.controls.contactNumber.errors.required"> Este campo é obrigátorio</span>
                     <span *ngIf="signupForm.controls.contactNumber.errors.pattern"> Este campo é invalido</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>E-mail</mat-label>
+                <input matInput formControlName="email" required>
+                <mat-error *ngIf="signupForm.controls.email.touched && signupForm.controls.email.invalid">
+                    <span *ngIf="signupForm.controls.email.errors.required"> Este campo é obrigátorio</span>
+                    <span *ngIf="signupForm.controls.email.errors.pattern"> Este campo é invalido</span>
                 </mat-error>
             </mat-form-field>
             <mat-form-field>
