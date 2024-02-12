@@ -12,7 +12,14 @@ export class UserService {
 
   signup(data: any) {
     return this.httpClient.post(this.url + '/user/signup', data, {
-      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      headers: new HttpHeaders().set('Content-Type', 'application/json')
     });
+  }
+
+  forgotPassword(data: any) {
+    return this.httpClient.post(this.url+'/user/forgotPassword',data,{
+      headers: new HttpHeaders().set('Content-Type', 'application/json')
+    })
+
   }
 }

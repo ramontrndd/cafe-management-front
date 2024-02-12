@@ -23,10 +23,11 @@ import {
 } from 'ngx-ui-loader';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
-  text: 'Loading ...',
+  text: 'Carregando ...',
   textColor: 'white',
   textPosition: 'center-center',
   pbColor: 'red',
@@ -48,6 +49,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AppHeaderComponent,
     AppSidebarComponent,
     SignupComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
