@@ -1,24 +1,42 @@
-import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, signal } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import {jwtDecode} from 'jwt-decode'
-import { MenuItems } from '../../../shared/menu-item';
+import { jwtDecode } from 'jwt-decode';
+
+export type MenuItem = {
+  state: string;
+  icon: string;
+  route: string;
+  role: string;
+};
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: []
+  styleUrls: [],
 })
 export class AppSidebarComponent implements OnDestroy {
+  menuItems = signal<MenuItem[]>([
+    {
+      icon: 'dashboard',
+      state: 'Dashboard',
+      route: 'dashboard',
+      role: '',
+    },
+    {
+      icon: 'category',
+      state: 'Manage Category',
+      route: 'category',
+      role: 'admin',
+    },
+  ]);
+
   mobileQuery: MediaQueryList;
-  token:any = localStorage.getItem('token');
-  tokenPayload:any;
+  token: any = localStorage.getItem('token');
+  tokenPayload: any;
 
   private _mobileQueryListener: () => void;
 
-  constructor(
-    changeDetectorRef: ChangeDetectorRef,
-    media: MediaMatcher,
-    public menuItems: MenuItems
-  ) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.tokenPayload = jwtDecode(this.token);
     this.mobileQuery = media.matchMedia('(min-width: 768px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();

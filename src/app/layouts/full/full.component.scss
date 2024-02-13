@@ -1,0 +1,20 @@
+.content {
+  padding: 24px;
+}
+mat-toolbar {
+  position: relative;
+  z-index: 5;
+}
+mat-sidenav-container {
+  height: calc(100vh - 64px);
+}
+.mat-toolbar__content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

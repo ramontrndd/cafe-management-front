@@ -1,29 +1,28 @@
-<div class="main-container">
-    <mat-toolbar color="primary" class="topbar telative">
-        <div class="navbar-header">
-            <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed" style="vertical-align: bottom;">
-                <mat-icon>menu</mat-icon>
-            </button><b>
-                <span style="vertical-align: middle;">
-                    <mat-icon>storefront</mat-icon>
-                </span>
-            </b>
-            <span fxShow="false" fxShow.gt-xs>
-                Cafe Management System
-            </span>
-        </div>
-        <span fxFlex></span>
-        <app-header></app-header>
-    </mat-toolbar>
-    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
-        <mat-sidenav #snav id="snav" class="dark-sidebar pl-xs" [mode]="mobileQuery.matches ? 'side' : 'over'"
-            fixedTopGap="0" [opened]="mobileQuery.matches" [disableClose]="mobileQuery.matches">
-            <app-sidebar></app-sidebar>
-        </mat-sidenav>
-        <mat-sidenav-content class="page-wrapper">
-            <div class="page-content">
-                <router-outlet></router-outlet>
-            </div>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
+<div>
+  <mat-toolbar color="primary" class="mat-elevation-z3 mat-toolbar__content">
+    <div class="nav-content">
+      <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span> Cafe Management System </span>
+      <mat-icon style="margin-left: 10px">storefront</mat-icon>
+    </div>
+
+    <app-header></app-header>
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav
+      #snav
+      id="snav"
+      mode="push"
+      [style.width]="'250px'"
+    >
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
