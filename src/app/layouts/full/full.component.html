@@ -1,39 +1,29 @@
 <div class="main-container">
-  <mat-toolbar color="primary">
-    <div class="nav-content">
-      <button mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
-      <span
-        >Cafe Management System<mat-icon
-          style="transform: translateY(5px); padding-left: 10px"
-          >storefront</mat-icon
-        ></span
-      >
-    </div>
-    <span>
-      <app-header></app-header>
-    </span>
-  </mat-toolbar>
+    <mat-toolbar color="primary" class="topbar telative">
+        <div class="navbar-header">
+            <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed" style="vertical-align: bottom;">
+                <mat-icon>menu</mat-icon>
+            </button><b>
+                <span style="vertical-align: middle;">
+                    <mat-icon>storefront</mat-icon>
+                </span>
+            </b>
+            <span fxShow="false" fxShow.gt-xs>
+                Cafe Management System
+            </span>
+        </div>
+        <span fxFlex></span>
+        <app-header></app-header>
+    </mat-toolbar>
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+        <mat-sidenav #snav id="snav" class="dark-sidebar pl-xs" [mode]="mobileQuery.matches ? 'side' : 'over'"
+            fixedTopGap="0" [opened]="mobileQuery.matches" [disableClose]="mobileQuery.matches">
+            <app-sidebar></app-sidebar>
+        </mat-sidenav>
+        <mat-sidenav-content class="page-wrapper">
+            <div class="page-content">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 </div>
-
-
-<mat-drawer-container aurosize>
-  <mat-drawer #drawer opened="false" mode="side">
-    <mat-nav-list>
-      <mat-list-item>
-        
-      </mat-list-item>
-    </mat-nav-list>
-  </mat-drawer>
-
-  <mat-drawer-content>
-    <div style="text-align: center; min-height: 600px;">
-
-      <router-outlet></router-outlet>
-
-    </div>
-  </mat-drawer-content>
-</mat-drawer-container>
-
-
-
-
