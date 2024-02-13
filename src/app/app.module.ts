@@ -13,7 +13,7 @@ import { FullComponent } from './layouts/full/full.component';
 import { AppHeaderComponent } from './layouts/full/header/header.component';
 import { AppSidebarComponent } from './layouts/full/sidebar/sidebar.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import {
   NgxUiLoaderModule,
@@ -25,7 +25,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
-
+import { tokenInterceptorInterceptor } from './_services/token-interceptor.interceptor';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   text: 'Carregando ...',
@@ -42,7 +42,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 
 @NgModule({
   declarations: [
-    
     AppComponent,
     HomeComponent,
     BestSellerComponent,
@@ -67,7 +66,15 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     MaterialModule,
     MatDialogModule,
   ],
-  providers: [provideAnimationsAsync()],
+  providers: [
+    provideAnimationsAsync(),
+    HttpClientModule,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: tokenInterceptorInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -4,6 +4,8 @@ export class GlobalConstants {
 
     public static genericError: string = "Algo deu errado tente mais tarde!"
 
+    public static unauthroized: string = "Você não tem autorização para  acessar!"
+
     // REGEX 
     public static  nameRegex: string = "[a-zA-Z0-9 ]*"
 

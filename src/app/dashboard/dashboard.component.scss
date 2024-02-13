@@ -1,7 +1,6 @@
 .position-relative {
 	position: relative;
 }
-
 .add-contact {
 	position: absolute;
     right: 17px;
@@ -16,11 +15,7 @@ body {
   html {
     box-sizing: border-box;
   }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
+
   .column {
     float: left;
     width: 33.3%;
@@ -41,7 +36,7 @@ body {
   }
   
   .container {
-    padding: 0 16px;
+    margin: 15px;
   }
   
   .container::after, .row::after {
