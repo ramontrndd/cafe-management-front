@@ -12,7 +12,7 @@ import { GlobalConstants } from '../shared/global-constants';
   styleUrl: './forgot-password.component.scss',
 })
 export class ForgotPasswordComponent implements OnInit {
-  forgotPasswordForm:any = FormGroup;
+  forgotPasswordForm: any = FormGroup;
   responseMessage: any;
 
   constructor(
@@ -36,8 +36,8 @@ export class ForgotPasswordComponent implements OnInit {
     this.ngxService.start();
     var formData = this.forgotPasswordForm.value;
     var data = {
-      email: formData.email
-    }
+      email: formData.email,
+    };
     this.useService.forgotPassword(data).subscribe(
       (response: any) => {
         this.ngxService.stop();

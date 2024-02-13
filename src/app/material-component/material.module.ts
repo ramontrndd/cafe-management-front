@@ -3,10 +3,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { CdkTableModule } from '@angular/cdk/table';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FlexLayoutModule } from '@angular/flex-layout';
-
 import { MaterialRoutes } from './material.routing';
 import { MaterialModule } from '../shared/material-module';
 import { ViewBillProductsComponent } from './dialog/view-bill-products/view-bill-products.component';
@@ -23,8 +20,7 @@ import { CategoryComponent } from './dialog/category/category.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    FlexLayoutModule,
-    CdkTableModule
+    CdkTableModule,
   ],
   providers: [],
   declarations: [
@@ -32,7 +28,7 @@ import { CategoryComponent } from './dialog/category/category.component';
     ConfirmationComponent,
     ChangePasswordComponent,
     ManageCategoryComponent,
-    CategoryComponent    
-  ]
+    CategoryComponent,
+  ],
 })
 export class MaterialComponentsModule {}

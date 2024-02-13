@@ -12,53 +12,68 @@ import { GlobalConstants } from '../shared/global-constants';
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss',
 })
-export class SignupComponent implements OnInit{
-  signupForm:any = FormGroup;
-  responseMessage:any;
+export class SignupComponent implements OnInit {
+  signupForm: any = FormGroup;
+  responseMessage: any;
 
-
-  constructor (
+  constructor(
     private formBuilder: FormBuilder,
     private router: Router,
     private userService: UserService,
     private snackbarService: SnackbarService,
     private dialogRef: MatDialogRef<SignupComponent>,
-    private ngxSerivce: NgxUiLoaderService){ }
+    private ngxSerivce: NgxUiLoaderService
+  ) {}
 
   ngOnInit(): void {
-      this.signupForm = this.formBuilder.group({
-        name: [null,[Validators.required, Validators.pattern(GlobalConstants.nameRegex)]],
-        email:[null,[Validators.required, Validators.pattern(GlobalConstants.emailRegex)]],
-        contactNumber: [null,[Validators.required, Validators.pattern(GlobalConstants.contactNumberRegex)]],
-        password: [null,[Validators.required]]
-      })
-
-    }
-    handleSubmit(){ 
-      this.ngxSerivce.start();
-      var formData = this.signupForm.value;
-      var data = {
-        name: formData.name,
-        email:formData.email,
-        contactNumber: formData.contactNumber,
-        password: formData.password
-      }
-      this.userService.signup(data).subscribe((response:any) => {
+    this.signupForm = this.formBuilder.group({
+      name: [
+        null,
+        [Validators.required, Validators.pattern(GlobalConstants.nameRegex)],
+      ],
+      email: [
+        null,
+        [Validators.required, Validators.pattern(GlobalConstants.emailRegex)],
+      ],
+      contactNumber: [
+        null,
+        [
+          Validators.required,
+          Validators.pattern(GlobalConstants.contactNumberRegex),
+        ],
+      ],
+      password: [null, [Validators.required]],
+    });
+  }
+  handleSubmit() {
+    this.ngxSerivce.start();
+    var formData = this.signupForm.value;
+    var data = {
+      name: formData.name,
+      email: formData.email,
+      contactNumber: formData.contactNumber,
+      password: formData.password,
+    };
+    this.userService.signup(data).subscribe(
+      (response: any) => {
         this.ngxSerivce.stop();
-        this.dialogRef.close()
+        this.dialogRef.close();
         this.responseMessage = response?.message;
-        this.snackbarService.openSnackbar(this.responseMessage, "");
+        this.snackbarService.openSnackbar(this.responseMessage, '');
         this.router.navigate(['/']);
-      },(error)=>{
+      },
+      (error) => {
         this.ngxSerivce.stop();
-        if(error.error?.message){
+        if (error.error?.message) {
           this.responseMessage = error.erro?.message;
-        }
-        else{
+        } else {
           this.responseMessage = GlobalConstants.genericError;
         }
-        this.snackbarService.openSnackbar(this.responseMessage, GlobalConstants.error)
-      })
+        this.snackbarService.openSnackbar(
+          this.responseMessage,
+          GlobalConstants.error
+        );
+      }
+    );
   }
-
 }
