@@ -27,6 +27,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { LoginComponent } from './login/login.component';
 import { tokenInterceptorInterceptor } from './_services/token-interceptor.interceptor';
 
+
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   text: 'Carregando ...',
   textColor: 'white',
