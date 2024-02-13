@@ -16,10 +16,12 @@ body {
   color: white;
 }
 
+
 /* Style the top navigation bar */
 .navbar {
   display: flex;
   background-color: #333;
+  
 }
 
 /* Style the navigation bar links */
@@ -28,6 +30,7 @@ body {
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
+  
 }
 
 /* Change color on hover */
@@ -132,6 +135,7 @@ ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
+  align-items: center;
 }
 
 a {
@@ -139,12 +143,13 @@ a {
   color: #ffffff;
   position: relative;
   font-size: 1.25em;
+  cursor: pointer;
 }
 
 a::after {
   content:"";
   top: 80%;
-  border-bottom: 2px solid #F8E71C;
+  
   transition: all 0.35s;
   position: absolute;
 }
