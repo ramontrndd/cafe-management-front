@@ -28,6 +28,12 @@ export class AppSidebarComponent implements OnDestroy {
       route: 'category',
       role: 'admin',
     },
+    {
+      icon: 'inventory_2',
+      state: 'Manage product',
+      route: 'product',
+      role: 'admin',
+    }
   ]);
 
   sideNavCollpsed = signal(false);
