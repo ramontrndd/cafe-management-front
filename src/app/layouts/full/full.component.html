@@ -1,7 +1,7 @@
 <div>
   <mat-toolbar color="primary" class="mat-elevation-z3 mat-toolbar__content">
     <div class="nav-content">
-      <button mat-icon-button (click)="snav.toggle()">
+      <button mat-icon-button (click)="collapsed.set(!collapsed())">
         <mat-icon>menu</mat-icon>
       </button>
       <span> Cafe Management System </span>
@@ -12,16 +12,11 @@
   </mat-toolbar>
 
   <mat-sidenav-container>
-    <mat-sidenav
-      #snav
-      id="snav"
-      mode="push"
-      [style.width]="'250px'"
-    >
-      <app-sidebar></app-sidebar>
+    <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+      <app-sidebar [collapsed]="collapsed()"></app-sidebar>
     </mat-sidenav>
 
-    <mat-sidenav-content class="content">
+    <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

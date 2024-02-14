@@ -4,6 +4,8 @@ import {
   Component,
   OnDestroy,
   AfterViewInit,
+  signal,
+  computed,
 } from '@angular/core';
 
 /** @title Responsive sidenav */
@@ -17,4 +19,9 @@ export class FullComponent implements OnDestroy, AfterViewInit {
 
   ngOnDestroy(): void {}
   ngAfterViewInit() {}
+
+  collapsed = signal(false)
+
+  sidenavWidth = computed(()=> this.collapsed() ? '65px' : '250px')
+
 }

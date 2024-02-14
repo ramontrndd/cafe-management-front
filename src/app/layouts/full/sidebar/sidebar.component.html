@@ -1,17 +1,28 @@
 <div class="sidenav-img">
-  <img src="assets/kitanda.png" width="100" height="100" >
-  <div class="header-text">
+  <img
+    src="assets/kitanda.png"
+    [width]="profilePicSiza()"
+    [height]="profilePicSiza()"
+  />
+  <div class="header-text" [class.hide-header-text]="sideNavCollpsed()">
     <h2>Kitanda CafeBistrô</h2>
     <p>Management System</p>
   </div>
 </div>
 
-
 <mat-nav-list>
   <ng-container *ngFor="let item of menuItems()">
-    <a mat-list-item *ngIf="item.role === '' || item.role === tokenPayload.role" [routerLink]="item.route">
-      <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
-      <span matListItemTitle>{{ item.state }}</span>
+    <a
+      mat-list-item
+      class="menu-item"
+      *ngIf="item.role === '' || item.role === tokenPayload.role"
+      [routerLink]="item.route"
+      routerLinkActive="selected-menu-item"
+      #rla="routerLinkActive"
+      [activated]="rla.isActive"
+    >
+      <mat-icon [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'" matListItemIcon>{{ item.icon }}</mat-icon>
+      <span matListItemTitle *ngIf="!sideNavCollpsed()">{{ item.state }}</span>
     </a>
   </ng-container>
 </mat-nav-list>

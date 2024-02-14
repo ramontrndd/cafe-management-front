@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnDestroy, computed, signal } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { jwtDecode } from 'jwt-decode';
 
@@ -29,6 +29,15 @@ export class AppSidebarComponent implements OnDestroy {
       role: 'admin',
     },
   ]);
+
+  sideNavCollpsed = signal(false);
+  @Input() set collapsed(val: boolean) {
+    this.sideNavCollpsed.set(val);
+  }
+
+  profilePicSiza = computed(()=> this.sideNavCollpsed() ? '32' : '100' )
+
+
 
   mobileQuery: MediaQueryList;
   token: any = localStorage.getItem('token');

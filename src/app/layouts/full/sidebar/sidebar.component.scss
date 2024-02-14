@@ -1,3 +1,7 @@
+:host * {
+  transition: all 500ms ease-in-out;
+}
+
 h2 {
   margin: 0;
 }
@@ -10,6 +14,8 @@ h2 {
   }
 
   .header-text {
+    height: 3rem;
+
     h2 > {
       margin: 0;
       font-size: 1rem;
@@ -20,4 +26,20 @@ h2 {
       font-size: 0.8rem;
     }
   }
+}
+
+.hide-header-text {
+  opacity: 0;
+  height: 0px !important;
+}
+
+.menu-item {
+  border-left: 5px solid;
+  border-left-color: rgba(0, 0, 0, 0);
+}
+
+.selected-menu-item {
+  border-left-color: red;
+  background: rgb(0, 0, 0, 0.05);
+ 
 }
