@@ -3,7 +3,7 @@
 }
 
 .add-category__content {
-  padding: 10px;
+  padding: 20px;
   margin: 10px;
   display: flex;
   flex-direction: row;
@@ -13,17 +13,8 @@
 }
 
 mat-card {
-  padding: 10px;
-  margin: 10px;
+  padding: 20px;
 }
-
 table {
-
-  margin: auto;
-  text-transform: uppercase;
- 
+  width: 100%;
 }
-tr { 
-  text-align: center;
-}
-
