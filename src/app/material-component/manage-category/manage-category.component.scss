@@ -1,0 +1,29 @@
+.float-right {
+  float: right;
+}
+
+.add-category__content {
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+mat-card {
+  padding: 10px;
+  margin: 10px;
+}
+
+table {
+
+  margin: auto;
+  text-transform: uppercase;
+ 
+}
+tr { 
+  text-align: center;
+}
+
