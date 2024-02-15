@@ -13,13 +13,13 @@
 
 <mat-card>
   <mat-form-field appearance="fill">
-    <mat-label>Filtro</mat-label>
+    <mat-label>Procurar Categoria</mat-label>
     <input matInput (keyup)="applyFilter($event)" #input />
   </mat-form-field>
 </mat-card>
 <hr />
 <mat-card>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>NOME</th>
       <td mat-cell *matCellDef="let element">{{ element.name }}</td>

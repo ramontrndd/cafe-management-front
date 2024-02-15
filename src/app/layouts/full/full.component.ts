@@ -20,8 +20,10 @@ export class FullComponent implements OnDestroy, AfterViewInit {
   ngOnDestroy(): void {}
   ngAfterViewInit() {}
 
-  collapsed = signal(false)
+  collapsed = signal(true)
 
   sidenavWidth = computed(()=> this.collapsed() ? '65px' : '250px')
+
+
 
 }

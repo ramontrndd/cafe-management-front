@@ -8,6 +8,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { GlobalConstants } from '../../shared/global-constants';
 import { ProductComponent } from '../dialog/product/product.component';
 import { ConfirmationComponent } from '../dialog/confirmation/confirmation.component';
+import { ConfirmationDeleteComponent } from '../dialog/confirmation-delete/confirmation-delete.component';
 
 @Component({
   selector: 'app-manage-product',
@@ -103,9 +104,9 @@ export class ManageProductComponent implements OnInit {
   handleDeleteAction(values: any) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {
-      message: 'delete ' + values.name + ' product',
+      message: '' + values.name + ' produto ',
     };
-    const dialogRef = this.dialog.open(ConfirmationComponent, dialogConfig);
+    const dialogRef = this.dialog.open(ConfirmationDeleteComponent, dialogConfig);
     const sub = dialogRef.componentInstance.onEmitStatusChange.subscribe(
       (response) => {
         this.ngxService.start();

@@ -45,7 +45,7 @@ export class ProductComponent implements OnInit {
 
     if (this.dialogData.action === 'Edit') {
       this.dialogAction = 'Edit';
-      this.action = 'Update';
+      this.action = 'ATUALIZAR';
       this.productForm.patchValue(this.dialogData.data);
     }
     this.getCategorys();

@@ -1,6 +1,8 @@
-import { ChangeDetectorRef, Component, Input, OnDestroy, computed, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, Input, OnDestroy, computed, signal } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { jwtDecode } from 'jwt-decode';
+
+
 
 export type MenuItem = {
   state: string;
@@ -24,13 +26,13 @@ export class AppSidebarComponent implements OnDestroy {
     },
     {
       icon: 'category',
-      state: 'Manage Category',
+      state: 'Categorias',
       route: 'category',
       role: 'admin',
     },
     {
       icon: 'inventory_2',
-      state: 'Manage product',
+      state: 'Produtos',
       route: 'product',
       role: 'admin',
     }
@@ -54,6 +56,7 @@ export class AppSidebarComponent implements OnDestroy {
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.tokenPayload = jwtDecode(this.token);
     this.mobileQuery = media.matchMedia('(min-width: 768px)');
+    
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }

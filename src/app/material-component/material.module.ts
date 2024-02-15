@@ -13,6 +13,7 @@ import { ManageCategoryComponent } from './manage-category/manage-category.compo
 import { CategoryComponent } from './dialog/category/category.component';
 import { ManageProductComponent } from './manage-product/manage-product.component';
 import { ProductComponent } from './dialog/product/product.component';
+import { ConfirmationDeleteComponent } from './dialog/confirmation-delete/confirmation-delete.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { ProductComponent } from './dialog/product/product.component';
     CategoryComponent,
     ManageProductComponent,
     ProductComponent,
+    ConfirmationDeleteComponent,
   ],
 })
 export class MaterialComponentsModule {}

@@ -1,4 +1,4 @@
-.mat-toolbar {
+mat-toolbar {
   width: auto;
   margin-bottom: 10px;
 }
@@ -11,4 +11,25 @@ mat-form-field {
   padding: 5px;
   flex-direction: column;
   display: flex;
+}
+mat-card {
+  padding: 10px;
+  margin: 10px;
+}
+.add-product__content {
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+td , th {
+  text-align: center;
+  text-transform: uppercase;
+}
+mat-slide-toggle{
+transform: translateY(-7px)
+
 }
