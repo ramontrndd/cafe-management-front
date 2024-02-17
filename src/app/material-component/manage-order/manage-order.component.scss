@@ -1,6 +1,18 @@
 .float-right {
   float: right;
 }
+.add-order__content {
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+button { 
+  margin: 5px;
+}
 mat-form-field {
   padding-right: 5px;
 }
@@ -8,11 +20,49 @@ mat-card {
   margin: 5px;
   padding: 5px;
 }
-table {
-  width: 100%;
-}
 td,
 th {
   text-transform: uppercase;
   text-align: center;
+}
+
+.mat-mdc-form-field {
+  width: 99%;
+}
+.mat-50 {
+  width: 49%;
+}
+.mat-25 {
+  width: 25%;
+}
+
+.mat-20 {
+  width: 20%;
+}
+b {
+  text-transform: uppercase;
+  padding: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .mat-25 {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+  }
+  .mat-20 {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+  }
+  table{
+    display: flex;
+    flex-direction: column;
+  }
+  .add-order__content{
+    display: flex;
+    flex-direction: column;
+  }
 }
