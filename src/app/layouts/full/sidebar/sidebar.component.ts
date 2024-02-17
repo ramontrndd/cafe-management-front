@@ -1,8 +1,14 @@
-import { ChangeDetectorRef, Component, HostListener, Input, OnDestroy, computed, signal } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  HostListener,
+  Input,
+  OnDestroy,
+  computed,
+  signal,
+} from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { jwtDecode } from 'jwt-decode';
-
-
 
 export type MenuItem = {
   state: string;
@@ -35,7 +41,13 @@ export class AppSidebarComponent implements OnDestroy {
       state: 'Produtos',
       route: 'product',
       role: 'admin',
-    }
+    },
+    {
+      icon: 'list_alt',
+      state: 'Pedidos',
+      route: 'order',
+      role: '',
+    },
   ]);
 
   sideNavCollpsed = signal(false);
@@ -43,9 +55,7 @@ export class AppSidebarComponent implements OnDestroy {
     this.sideNavCollpsed.set(val);
   }
 
-  profilePicSiza = computed(()=> this.sideNavCollpsed() ? '32' : '100' )
-
-
+  profilePicSiza = computed(() => (this.sideNavCollpsed() ? '32' : '100'));
 
   mobileQuery: MediaQueryList;
   token: any = localStorage.getItem('token');
@@ -56,7 +66,7 @@ export class AppSidebarComponent implements OnDestroy {
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.tokenPayload = jwtDecode(this.token);
     this.mobileQuery = media.matchMedia('(min-width: 768px)');
-    
+
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
   }

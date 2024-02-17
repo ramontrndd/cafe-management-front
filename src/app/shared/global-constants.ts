@@ -1,24 +1,28 @@
-export class GlobalConstants { 
+export class GlobalConstants {
+  // Message
 
-    // Message
+  public static genericError: string = 'Algo deu errado tente mais tarde!';
 
-    public static genericError: string = "Algo deu errado tente mais tarde!"
+  public static unauthroized: string = 'Você não tem autorização para acessar!';
 
-    public static unauthroized: string = "Você não tem autorização para acessar!"
+  public static productExistError: string = "Este producto já existe"
+  
+  public static productAdded: string = "Produto adicionado com sucesso."
 
-    // REGEX 
-    public static nameRegexWithAccents: string = "[a-zA-ZÀ-ÿ0-9 ]*";
+  // REGEX
 
-    public static  nameRegex: string = "[a-zA-Z0-9 ]*"
+  public static priceRegex: string = '[0-9.]*';
 
-    public static  emailRegex: string = "[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}"
+  public static nameRegexWithAccents: string = '[a-zA-ZÀ-ÿ0-9 ]*';
 
-    public static  contactNumberRegex: string = "^[e0-9]{11,11}$"
+  public static nameRegex: string = '[a-zA-Z0-9 ]*';
 
+  public static emailRegex: string =
+    '[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}';
 
-    // VARIABLE
+  public static contactNumberRegex: string = '^[e0-9]{11,11}$';
 
-    public static error:string = "error";
+  // VARIABLE
 
-    
+  public static error: string = 'error';
 }

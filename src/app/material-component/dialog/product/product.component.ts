@@ -39,7 +39,7 @@ export class ProductComponent implements OnInit {
         ],
       ],
       categoryId: [null, [Validators.required]],
-      price: [null, [Validators.required]],
+      price: [null, [Validators.required, Validators.pattern(GlobalConstants.priceRegex)]],
       description: [null, [Validators.required]],
     });
 
