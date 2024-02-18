@@ -1,11 +1,11 @@
 <div class="sidenav-img">
   <img
-    src="assets/kitanda.png"
+    src="assets/cafe-managament.jpg"
     [width]="profilePicSiza()"
     [height]="profilePicSiza()"
   />
   <div class="header-text" [class.hide-header-text]="sideNavCollpsed()">
-    <h2>Kitanda CafeBistrô</h2>
+    <h2>CafeBistrô</h2>
     <p>Management System</p>
   </div>
 </div>
@@ -21,8 +21,17 @@
       #rla="routerLinkActive"
       [activated]="rla.isActive"
     >
-      <mat-icon [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'" matListItemIcon>{{ item.icon }}</mat-icon>
-      <span matListItemTitle *ngIf="!sideNavCollpsed()">{{ item.state }}</span>
+      <mat-icon
+        [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'"
+        matListItemIcon
+        >{{ item.icon }}</mat-icon
+      >
+      <span
+        matListItemTitle
+        *ngIf="!sideNavCollpsed()"
+        style="text-transform: uppercase; font-weight: bold;font-family: 'Roboto', sans-serif;"
+        >{{ item.state }}</span
+      >
     </a>
   </ng-container>
 </mat-nav-list>

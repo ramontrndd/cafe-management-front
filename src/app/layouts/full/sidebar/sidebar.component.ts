@@ -54,6 +54,12 @@ export class AppSidebarComponent implements OnDestroy {
       route: 'bill',
       role: '',
     },
+    {
+      icon: 'people',
+      state: 'Usuários',
+      route: 'user',
+      role: 'admin',
+    },
   ]);
 
   sideNavCollpsed = signal(false);

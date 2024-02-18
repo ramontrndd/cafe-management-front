@@ -16,6 +16,7 @@ import { ProductComponent } from './dialog/product/product.component';
 import { ConfirmationDeleteComponent } from './dialog/confirmation-delete/confirmation-delete.component';
 import { ManageOrderComponent } from './manage-order/manage-order.component';
 import { ViewBillComponent } from './view-bill/view-bill.component';
+import { ManageUserComponent } from './manage-user/manage-user.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { ViewBillComponent } from './view-bill/view-bill.component';
     ConfirmationDeleteComponent,
     ManageOrderComponent,
     ViewBillComponent,
+    ManageUserComponent,
   ],
 })
 export class MaterialComponentsModule {}
