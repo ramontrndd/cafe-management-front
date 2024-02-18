@@ -20,7 +20,7 @@ import {
   PB_DIRECTION,
   NgxUiLoaderConfig,
 } from 'ngx-ui-loader';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
@@ -50,7 +50,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     SignupComponent,
     ForgotPasswordComponent,
     LoginComponent,
-  
   ],
   imports: [
     BrowserModule,
@@ -73,7 +72,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       provide: HTTP_INTERCEPTORS,
       useClass: tokenInterceptorInterceptor,
       multi: true,
-    },CurrencyPipe
+    },
+    CurrencyPipe,
   ],
   bootstrap: [AppComponent],
 })

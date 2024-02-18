@@ -121,7 +121,7 @@
       </mat-form-field>
       <mat-form-field appearance="fill" class="mat-20">
         <mat-label>Preço</mat-label>
-        <input matInput formControlName="price" required readonly />
+        <input matInput formControlName="price" type="number" required readonly />
         <mat-error
           *ngIf="
             manageOrderForm.controls.price.touched &&
@@ -161,7 +161,7 @@
       </mat-form-field>
       <mat-form-field appearance="fill" class="mat-20">
         <mat-label>TOTAL</mat-label>
-        <input matInput formControlName="total" required readonly />
+        <input matInput formControlName="total" type="number" readonly />
       </mat-form-field>
     </div>
   </form>

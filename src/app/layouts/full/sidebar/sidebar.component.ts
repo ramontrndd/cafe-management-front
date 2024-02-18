@@ -48,6 +48,12 @@ export class AppSidebarComponent implements OnDestroy {
       route: 'order',
       role: '',
     },
+    {
+      icon: 'import_contacts',
+      state: 'Ver Contas',
+      route: 'bill',
+      role: '',
+    },
   ]);
 
   sideNavCollpsed = signal(false);
