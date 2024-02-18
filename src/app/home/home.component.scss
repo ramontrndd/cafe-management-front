@@ -16,12 +16,10 @@ body {
   color: white;
 }
 
-
 /* Style the top navigation bar */
 .navbar {
   display: flex;
   background-color: #333;
-  
 }
 
 /* Style the navigation bar links */
@@ -30,7 +28,6 @@ body {
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
-  
 }
 
 /* Change color on hover */
@@ -40,7 +37,7 @@ body {
 }
 
 /* Column container */
-.row {  
+.row {
   display: flex;
   flex-wrap: wrap;
 }
@@ -77,7 +74,8 @@ body {
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
-  .row, .navbar {   
+  .row,
+  .navbar {
     flex-direction: column;
   }
 }
@@ -113,7 +111,7 @@ body {
   height: 65px;
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   background-color: #e53935;
 }
 
@@ -147,9 +145,9 @@ a {
 }
 
 a::after {
-  content:"";
+  content: "";
   top: 80%;
-  
+
   transition: all 0.35s;
   position: absolute;
 }
@@ -172,24 +170,24 @@ a:hover::after {
   .wrapper {
     height: auto;
   }
-  
+
   nav {
     flex-direction: column;
     align-items: center;
   }
-  
+
   a.logo {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     margin-right: 0px;
   }
-  
+
   ul {
     width: 100%;
     margin-bottom: 1em;
     justify-content: space-between;
   }
-  
+
   ul li a {
     margin-left: 0px;
   }
@@ -199,16 +197,16 @@ a:hover::after {
   a.logo {
     margin: 1.5em;
   }
-  
+
   ul {
     flex-direction: column;
   }
-  
+
   ul li {
     margin: 0.3em;
     text-align: center;
   }
-  
+
   ul li a {
     margin-left: 0px;
   }
@@ -227,14 +225,14 @@ a:hover::after {
 .bg-image {
   /* The image used */
   background-image: url("../../assets/cup-cafe-management.jpg");
-  
+
   /* Add the blur effect */
   filter: blur(3px);
   -webkit-filter: blur(3px);
-  
+
   /* Full height */
-  height: 100%; 
-  
+  height: 100%;
+
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
@@ -243,8 +241,8 @@ a:hover::after {
 
 /* Position text in the middle of the page/image */
 .bg-text {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.8); /* Black w/opacity/see-through */
   color: white;
   font-weight: bold;
   border: 3px solid #f1f1f1;
