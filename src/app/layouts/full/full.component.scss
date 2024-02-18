@@ -1,5 +1,5 @@
 .content {
-  padding: 24px;
+  padding: 10px;
 }
 mat-toolbar {
   position: relative;
@@ -21,4 +21,10 @@ mat-sidenav-container {
 mat-sidenav,
 mat-sidenav-content {
   transition: all 500ms ease-in-out;
+}
+@media (max-width: 768px) {
+  .header-text__name{
+    display: none;
+  }
+
 }

@@ -10,7 +10,7 @@
   justify-content: space-between;
   text-transform: uppercase;
 }
-button { 
+button {
   margin: 5px;
 }
 mat-form-field {
@@ -45,7 +45,9 @@ b {
   text-align: center;
   padding: 10px;
 }
-
+hr {
+  margin: 5px;
+}
 @media (max-width: 768px) {
   .mat-25 {
     display: flex;
@@ -57,12 +59,18 @@ b {
     display: flex;
     flex-direction: column;
   }
-  table{
+  table {
     display: flex;
     flex-direction: column;
   }
-  .add-order__content{
+  .add-order__content {
     display: flex;
     flex-direction: column;
+  }
+  td,
+  th {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.5rem;
   }
 }

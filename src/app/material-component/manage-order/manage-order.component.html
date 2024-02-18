@@ -7,7 +7,7 @@
     (click)="submitAction()"
     [disabled]="validadeSubmit()"
   >
-    REALIZAR PEDIDO
+    FINALIZAR PEDIDO
   </button>
 </mat-card>
 <hr />
@@ -165,19 +165,22 @@
       </mat-form-field>
     </div>
   </form>
-  <button
-    class="float-right"
-    mat-flat-button
-    color="primary"
-    [disabled]="validadeProductAdd()"
-    (click)="add()"
-  >
-    ADICIONAR PRODUTO
-  </button>
+  <div>
+    <button
+    
+      mat-flat-button
+      color="primary"
+      [disabled]="validadeProductAdd()"
+      (click)="add()"
+    >
+      ADICIONAR PRODUTO
+    </button>
+    <button mat-flat-button color="primary" class="float-right"> {{ totalAmount | currency : "BRL" }}</button>
+  </div>
 </mat-card>
 <hr />
 <div>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z10">
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Nome</th>
       <td mat-cell *matCellDef="let element">{{ element.name }}</td>
@@ -220,4 +223,4 @@
   </table>
 </div>
 
-<button mat-flat-button color="primary" class="float-right"> {{ totalAmount | currency : "BRL" }}</button>
+

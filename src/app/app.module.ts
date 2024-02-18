@@ -21,7 +21,7 @@ import {
   NgxUiLoaderConfig,
 } from 'ngx-ui-loader';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
 import { tokenInterceptorInterceptor } from './_services/token-interceptor.interceptor';
@@ -64,6 +64,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     MaterialModule,
     MatDialogModule,
+    CurrencyPipe,
   ],
   providers: [
     provideAnimationsAsync(),
@@ -72,7 +73,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       provide: HTTP_INTERCEPTORS,
       useClass: tokenInterceptorInterceptor,
       multi: true,
-    },
+    },CurrencyPipe
   ],
   bootstrap: [AppComponent],
 })

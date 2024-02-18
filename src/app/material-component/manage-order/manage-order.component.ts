@@ -7,6 +7,7 @@ import { BillService } from '../../_services/bill.service';
 import { GlobalConstants } from '../../shared/global-constants';
 import { saveAs } from 'file-saver';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CurrencyPipe } from '@angular/common';
 
 
 @Component({
@@ -33,6 +34,7 @@ export class ManageOrderComponent implements OnInit {
   responseMessage: any;
 
   constructor(
+    private currencyPipe: CurrencyPipe,
     private formBuilder: FormBuilder,
     private categoryService: CategoryService,
     private productService: ProductService,
@@ -67,6 +69,9 @@ export class ManageOrderComponent implements OnInit {
       price: [null, [Validators.required]],
       total: [null, [Validators.required]],
     });
+
+
+
   }
 
   getCategorys() {
