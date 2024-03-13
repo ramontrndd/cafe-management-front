@@ -16,7 +16,7 @@ h2 {
   .header-text {
     height: 3rem;
 
-    h2 > {
+    > h2 {
       margin: 0;
       font-size: 1rem;
       line-height: 1.5rem;
@@ -41,5 +41,4 @@ h2 {
 .selected-menu-item {
   border-left-color: red;
   background: rgb(0, 0, 0, 0.05);
- 
 }
