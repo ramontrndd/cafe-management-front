@@ -2,10 +2,10 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import {
   ChangeDetectorRef,
   Component,
-  OnDestroy,
-  AfterViewInit,
   signal,
   computed,
+  OnInit,
+  HostListener,
 } from '@angular/core';
 
 /** @title Responsive sidenav */
@@ -14,16 +14,27 @@ import {
   templateUrl: 'full.component.html',
   styleUrls: ['./full.component.scss'],
 })
-export class FullComponent implements OnDestroy, AfterViewInit {
+export class FullComponent implements OnInit {
   constructor() {}
 
-  ngOnDestroy(): void {}
-  ngAfterViewInit() {}
+  collapsed = signal(false);
 
-  collapsed = signal(true)
+  sidenavWidth = computed(() => (this.collapsed() ? '65px' : '250px'));
 
-  sidenavWidth = computed(()=> this.collapsed() ? '65px' : '250px')
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.updateSidenavVisibility();
+  }
 
+  ngOnInit() {
+    this.updateSidenavVisibility();
+  }
 
-
+  private updateSidenavVisibility() {
+    if (window.innerWidth >= 768) {
+      this.collapsed.set(false);
+    } else {
+      this.collapsed.set(true);
+    }
+  }
 }

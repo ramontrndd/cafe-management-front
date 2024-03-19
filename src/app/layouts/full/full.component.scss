@@ -20,11 +20,10 @@ mat-sidenav-container {
 }
 mat-sidenav,
 mat-sidenav-content {
-  transition: all 500ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 @media (max-width: 768px) {
-  .header-text__name{
+  .header-text__name {
     display: none;
   }
-
 }
