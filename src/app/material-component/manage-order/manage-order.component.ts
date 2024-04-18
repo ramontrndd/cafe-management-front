@@ -5,7 +5,6 @@ import { SnackbarService } from '../../_services/snackbar.service';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { BillService } from '../../_services/bill.service';
 import { GlobalConstants } from '../../shared/global-constants';
-import { saveAs } from 'file-saver';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CurrencyPipe } from '@angular/common';
 
@@ -210,7 +209,7 @@ export class ManageOrderComponent implements OnInit {
     this.dataSource = [...this.dataSource];
   }
 
-  submitAction() {
+  submitAction(){
     this.ngxService.start();
     var formData = this.manageOrderForm.value;
     var data = {
@@ -223,10 +222,10 @@ export class ManageOrderComponent implements OnInit {
     };
     this.billService.generateReport(data).subscribe(
       (response: any) => {
-        this.downloadFile(response?.uuid);
         this.manageOrderForm.reset();
         this.dataSource = [];
         this.totalAmount = 0;
+        this.ngxService.stop();
       },
       (error: any) => {
         this.ngxService.stop();
@@ -241,15 +240,5 @@ export class ManageOrderComponent implements OnInit {
         );
       }
     );
-  }
-
-  downloadFile(fileName: any) {
-    var data = {
-      uuid: fileName,
-    };
-    this.billService.getPDF(data).subscribe((response: any) => {
-      saveAs(response, fileName + '.pdf');
-      this.ngxService.stop();
-    });
   }
 }
