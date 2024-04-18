@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { ConfirmationComponent } from '../../../material-component/dialog/confirmation/confirmation.component'
+import { ConfirmationComponent } from '../../../material-component/dialog/confirmation/confirmation.component';
 import { ChangePasswordComponent } from '../../../material-component/dialog/change-password/change-password.component';
 
 @Component({
@@ -13,7 +13,6 @@ export class AppHeaderComponent {
   role: any;
   constructor(private router: Router, private dialog: MatDialog) {}
 
-  
   logout() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {
