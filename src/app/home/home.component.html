@@ -1,18 +1,83 @@
-<div class="bg-image"></div>
-<div class="wrapper sticky">
-  <nav class="navbar-fixed-top">
-    <a href="#" class="logo">
-      <mat-icon>storefront</mat-icon> Cafe Management System
-    </a>
-    <ul>
-      <li><a (click)="signupAction()">Cadastro</a></li>
-      <li><a (click)="forgotPasswordAction()">Recuperar senha</a></li>
-      <li>
-        <a (click)="loginAction()" mat-raised-button color="accent">Login</a>
-      </li>
-    </ul>
-  </nav>
-</div>
-<div class="footer" id="signup">
-  <h2></h2>
-</div>
+<body>
+
+    <mat-toolbar color="primary" class="toolbar-container">
+    
+        <div class="name-content">
+          <span>Café Management System</span>
+          <mat-icon>storefront</mat-icon>
+        </div>
+        <div class="btn-content">
+          <button mat-raised-button (click)="signupAction()" color="accent">
+            Registre-se
+          </button>
+          <button mat-raised-button (click)="forgotPasswordAction()">
+            Recuperar senha
+          </button>
+        </div>
+
+    </mat-toolbar>
+
+    <mat-card  class="lg-content mat-elevation-z4">
+      <mat-toolbar color="primary">
+        <span class="title-center">LOGIN</span>
+      </mat-toolbar>
+
+      <mat-dialog-content class="mat-dialog__container">
+        <form [formGroup]="loginForm">
+          <div>
+            <mat-form-field appearance="outline">
+
+              <mat-label>E-mail</mat-label>
+              <input matInput formControlName="email" required />
+              <mat-icon matSuffix>email</mat-icon>
+              <mat-error
+                *ngIf="
+                  loginForm.controls.email.touched &&
+                  loginForm.controls.email.invalid
+                "
+              >
+                <span *ngIf="loginForm.controls.email.errors.required">
+                  Este campo é obrigátorio</span
+                >
+                <span *ngIf="loginForm.controls.email.errors.pattern">
+                  Este campo é invalido</span
+                >
+              </mat-error>
+
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>Senha</mat-label>
+              <input type="password" matInput formControlName="password" required />
+              <mat-icon matSuffix>lock</mat-icon>
+              <mat-error
+                *ngIf="
+                  loginForm.controls.password.touched &&
+                  loginForm.controls.password.invalid
+                "
+              >
+                <span *ngIf="loginForm.controls.password.errors.required">
+                  Este campo é obrigátorio</span
+                >
+                <span *ngIf="loginForm.controls.password.errors.pattern">
+                  Este campo é invalido</span
+                >
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </form>
+      </mat-dialog-content>
+
+      <mat-dialog-actions align="center">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          (click)="handleSubmit()"
+          [disabled]="!(loginForm.valid && loginForm.dirty)"
+        >
+          Entrar
+        </button>
+      </mat-dialog-actions>
+    </mat-card>
+</body>

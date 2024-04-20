@@ -1,12 +1,4 @@
-import { MediaMatcher } from '@angular/cdk/layout';
-import {
-  ChangeDetectorRef,
-  Component,
-  signal,
-  computed,
-  OnInit,
-  HostListener,
-} from '@angular/core';
+import { Component, computed, HostListener, OnInit, signal } from '@angular/core';
 
 /** @title Responsive sidenav */
 @Component({
