@@ -50,7 +50,7 @@ export class AppSidebarComponent implements OnDestroy {
     },
     {
       icon: 'import_contacts',
-      state: 'Pedidos',
+      state: 'Contas',
       route: 'bill',
       role: '',
     },
