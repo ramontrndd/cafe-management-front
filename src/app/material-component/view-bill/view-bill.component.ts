@@ -85,7 +85,7 @@ export class ViewBillComponent implements OnInit {
       uuid: values.uuid,
       contactNumber: values.contactNumber,
       paymentMethod: values.paymentMethod,
-      totalAmout: values.totalAmout,
+      totalAmount: values.totalAmount,
       productDetails: values.productDetails,
     };
     this.billService.getPDF(data).subscribe((response) => {
