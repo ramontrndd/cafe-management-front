@@ -7,7 +7,7 @@
 <mat-dialog-content>
   <form [formGroup]="productForm">
     <div>
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <mat-label>Nome</mat-label>
         <input matInput formControlName="name" required />
         <mat-error
@@ -26,7 +26,7 @@
       </mat-form-field>
     </div>
     <div>
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <mat-label>Preço</mat-label>
         <input matInput formControlName="price" required />
         <mat-error
@@ -45,7 +45,7 @@
       </mat-form-field>
     </div>
     <div>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Categoria</mat-label>
         <mat-error
           *ngIf="
@@ -68,7 +68,7 @@
     </div>
 
     <div>
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <mat-label>Descrição</mat-label>
         <input matInput formControlName="description" required />
         <mat-error
