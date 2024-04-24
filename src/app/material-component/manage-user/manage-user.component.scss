@@ -1,7 +1,24 @@
-mat-card{ 
-    padding: 10px;
-    margin: 10px;
-}
-td, th {
+mat-card {
+  padding: 10px;
+  margin: 10px;
+  > b,
+  span {
+    text-transform: uppercase;
     text-align: center;
+  }
+}
+td,
+th {
+  text-align: center;
+}
+
+@media screen and (min-width: 360px) and (max-width: 728px) {
+  .card-container {
+    max-height: 400px;
+    overflow: auto;
+  }
+
+  .card-content {
+    overflow-x: auto;
+  }
 }
