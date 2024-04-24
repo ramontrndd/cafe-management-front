@@ -8,7 +8,7 @@ import { SnackbarService } from '../_services/snackbar.service';
 import { UserService } from '../_services/user.service';
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
 import { GlobalConstants } from '../shared/global-constants';
-import { SignupComponent } from '../signup/signup.component';
+import { SignupComponent } from './signup/signup.component';
 
 @Component({
   selector: 'app-home',

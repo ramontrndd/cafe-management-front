@@ -18,7 +18,7 @@ import { AppHeaderComponent } from './layouts/full/header/header.component';
 import { AppSidebarComponent } from './layouts/full/sidebar/sidebar.component';
 import { MaterialModule } from './shared/material-module';
 import { SharedModule } from './shared/shared.module';
-import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './home/signup/signup.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   text: 'Carregando ...',

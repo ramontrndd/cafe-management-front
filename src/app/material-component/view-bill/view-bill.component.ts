@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { BillService } from '../../_services/bill.service';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
-import { SnackbarService } from '../../_services/snackbar.service';
-import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { GlobalConstants } from '../../shared/global-constants';
-import { ViewBillProductsComponent } from '../dialog/view-bill-products/view-bill-products.component';
-import { ConfirmationComponent } from '../dialog/confirmation/confirmation.component';
+import { Router } from '@angular/router';
 import { saveAs } from 'file-saver';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
+
+import { BillService } from '../../_services/bill.service';
+import { SnackbarService } from '../../_services/snackbar.service';
+import { GlobalConstants } from '../../shared/global-constants';
+import { ViewBillProductsComponent } from '../view-bill-products/view-bill-products.component';
+import { ConfirmationDeleteBillComponent } from './../dialog/confirmation-delete-bill/confirmation-delete-bill.component';
+
 
 @Component({
   selector: 'app-view-bill',
@@ -99,7 +101,7 @@ export class ViewBillComponent implements OnInit {
     dialogConfig.data = {
       message: 'deletar a ' + values.name + ' Conta ',
     };
-    const dialogRef = this.dialog.open(ConfirmationComponent, dialogConfig);
+    const dialogRef = this.dialog.open(ConfirmationDeleteBillComponent, dialogConfig);
     const sub = dialogRef.componentInstance.onEmitStatusChange.subscribe(
       (response) => {
         this.ngxService.start();

@@ -20,7 +20,7 @@
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Contato</mat-label>
+                <mat-label>Telefone</mat-label>
                 <input matInput formControlName="contactNumber" required>
                 <mat-icon matSuffix>smartphone</mat-icon>
                 <mat-error *ngIf="signupForm.controls.contactNumber.touched && signupForm.controls.contactNumber.invalid">
@@ -28,6 +28,7 @@
                     <span *ngIf="signupForm.controls.contactNumber.errors.pattern"> Este campo é invalido</span>
                 </mat-error>
             </mat-form-field>
+
             <mat-form-field appearance="outline">
                 <mat-label>E-mail</mat-label>
                 <input matInput formControlName="email" required>
@@ -37,6 +38,7 @@
                     <span *ngIf="signupForm.controls.email.errors.pattern"> Este campo é invalido</span>
                 </mat-error>
             </mat-form-field>
+            
             <mat-form-field appearance="outline">
                 <mat-label>Senha</mat-label>
                 <input type="password" matInput formControlName="password" required>

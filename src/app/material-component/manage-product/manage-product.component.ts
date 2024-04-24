@@ -6,7 +6,7 @@ import { SnackbarService } from '../../_services/snackbar.service';
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
 import { GlobalConstants } from '../../shared/global-constants';
-import { ProductComponent } from '../dialog/product/product.component';
+import { ProductComponent } from '../product/product.component';
 import { ConfirmationComponent } from '../dialog/confirmation/confirmation.component';
 import { ConfirmationDeleteComponent } from '../dialog/confirmation-delete/confirmation-delete.component';
 
