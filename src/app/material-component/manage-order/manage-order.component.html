@@ -62,7 +62,7 @@
 <hr/>
 
 <mat-card>
-  
+
   <b><span>Selecione o produto</span></b>
   <form [formGroup]="manageOrderForm">
     <div>
@@ -134,7 +134,7 @@
       </mat-form-field>
     </div>
   </form>
-  <div>
+  <div class="btn-select-product">
     <button
 
       mat-flat-button
@@ -148,48 +148,50 @@
   </div>
 </mat-card>
 <hr />
-<div>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z10">
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Nome</th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-    </ng-container>
-    <ng-container matColumnDef="category">
-      <th mat-header-cell *matHeaderCellDef>Categoria</th>
-      <td mat-cell *matCellDef="let element">{{ element.category }}</td>
-    </ng-container>
-    <ng-container matColumnDef="price">
-      <th mat-header-cell *matHeaderCellDef>Preço</th>
-      <td mat-cell *matCellDef="let element">
-        {{ element.price | currency : "BRL" }}
-      </td>
-    </ng-container>
-    <ng-container matColumnDef="quantity">
-      <th mat-header-cell *matHeaderCellDef>Quantidade</th>
-      <td mat-cell *matCellDef="let element">{{ element.quantity }}</td>
-    </ng-container>
-    <ng-container matColumnDef="total">
-      <th mat-header-cell *matHeaderCellDef>Total</th>
-      <td mat-cell *matCellDef="let element">
-        {{ element.total | currency : "BRL" }}
-      </td>
-    </ng-container>
-    <ng-container matColumnDef="edit">
-      <th mat-header-cell *matHeaderCellDef>Apagar</th>
-      <td mat-cell *matCellDef="let element; let i = index">
-        <button
-          mat-icon-button
-          color="primary"
-          matTooltip="Deletar"
-          (click)="handleDeleteAction(i, element)"
-        >
-          <mat-icon>delete</mat-icon>
-        </button>
-      </td>
-    </ng-container>
-    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
-</div>
+<mat-card class="card-container">
+  <div class="card-content">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z10">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef>Categoria</th>
+        <td mat-cell *matCellDef="let element">{{ element.category }}</td>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>Preço</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.price | currency : "BRL" }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef>Quantidade</th>
+        <td mat-cell *matCellDef="let element">{{ element.quantity }}</td>
+      </ng-container>
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef>Total</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.total | currency : "BRL" }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef>Apagar</th>
+        <td mat-cell *matCellDef="let element; let i = index">
+          <button
+            mat-icon-button
+            color="primary"
+            matTooltip="Deletar"
+            (click)="handleDeleteAction(i, element)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</mat-card>
 
 

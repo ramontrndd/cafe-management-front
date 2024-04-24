@@ -1,6 +1,3 @@
-.float-right {
-  float: right;
-}
 .add-order__content {
   padding: 20px;
   margin: 10px;
@@ -10,6 +7,15 @@
   justify-content: space-between;
   text-transform: uppercase;
 }
+.card-container {
+  max-height: 400px;
+  overflow: auto;
+}
+
+.card-content {
+  overflow-x: auto;
+}
+
 button {
   margin: 5px;
 }
@@ -48,7 +54,15 @@ b {
 hr {
   margin: 5px;
 }
-@media (max-width: 768px) {
+.card-container {
+  max-height: 400px;
+  overflow: auto;
+}
+
+.card-content {
+  overflow-x: auto;
+}
+@media screen and (min-width: 360px) and (max-width: 728px) {
   .mat-25 {
     display: flex;
     flex-direction: column;
@@ -59,18 +73,15 @@ hr {
     display: flex;
     flex-direction: column;
   }
-  table {
-    display: flex;
-    flex-direction: column;
-  }
   .add-order__content {
     display: flex;
     flex-direction: column;
   }
-  td,
-  th {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 0.5rem;
+  .btn-select-product {
+    display: flex;
+    flex-direction: column;
+    > button {
+      font-size: size 0.7rem;
+    }
   }
 }
