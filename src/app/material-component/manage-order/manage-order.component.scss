@@ -10,6 +10,7 @@
 .card-container {
   max-height: 400px;
   overflow: auto;
+  margin: 15px;
 }
 
 .card-content {
@@ -31,7 +32,6 @@ th {
   text-transform: uppercase;
   text-align: center;
 }
-
 .mat-mdc-form-field {
   width: 99%;
 }
