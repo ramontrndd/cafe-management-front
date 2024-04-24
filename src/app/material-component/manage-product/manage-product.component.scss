@@ -2,7 +2,14 @@ mat-toolbar {
   width: auto;
   margin-bottom: 10px;
 }
+.card-container {
+  max-height: 400px;
+  overflow: auto;
+}
 
+.table-container {
+  overflow-x: auto;
+}
 .title-center {
   flex: 1 1 auto;
   text-align: center;
@@ -32,4 +39,17 @@ td , th {
 mat-slide-toggle{
 transform: translateY(-7px)
 
+}
+
+@media screen and (min-width: 360px) and (max-width: 728px) {
+ .add-product__content{
+  flex-direction: column;
+  > button {
+    margin-top: 15px;
+    font-size: .7rem;
+  }
+ }
+  td , th {
+    font-size: .7rem;
+  }
 }

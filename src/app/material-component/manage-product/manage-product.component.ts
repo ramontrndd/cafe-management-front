@@ -1,14 +1,15 @@
+
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../_services/product.service';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { SnackbarService } from '../../_services/snackbar.service';
-import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
+
+import { ProductService } from '../../_services/product.service';
+import { SnackbarService } from '../../_services/snackbar.service';
 import { GlobalConstants } from '../../shared/global-constants';
-import { ProductComponent } from '../product/product.component';
-import { ConfirmationComponent } from '../dialog/confirmation/confirmation.component';
 import { ConfirmationDeleteComponent } from '../dialog/confirmation-delete/confirmation-delete.component';
+import { ProductComponent } from '../product/product.component';
 
 @Component({
   selector: 'app-manage-product',
@@ -26,17 +27,20 @@ export class ManageProductComponent implements OnInit {
   dataSource: any;
   responseMessage: any;
 
+
   constructor(
     private productService: ProductService,
     private ngxService: NgxUiLoaderService,
     private dialog: MatDialog,
     private snackbarService: SnackbarService,
-    private router: Router
+    private router: Router,
+
   ) {}
 
   ngOnInit(): void {
     this.ngxService.start();
     this.tableData();
+    
   }
 
   tableData() {
