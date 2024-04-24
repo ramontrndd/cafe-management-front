@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { CategoryService } from '../../../_services/category.service';
-import { SnackbarService } from '../../../_services/snackbar.service';
-import { GlobalConstants } from '../../../shared/global-constants';
+import { CategoryService } from '../../_services/category.service';
+import { SnackbarService } from '../../_services/snackbar.service';
+import { GlobalConstants } from '../../shared/global-constants';
 
 @Component({
   selector: 'app-category',

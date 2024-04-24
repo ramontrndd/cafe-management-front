@@ -7,9 +7,9 @@
 <mat-dialog-content>
   <form [formGroup]="productForm">
     <div>
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <mat-label>Nome</mat-label>
-        <input matInput formControlName="name" required />
+        <input matInput formControlName="name"  />
         <mat-error
           *ngIf="
             productForm.controls.name.touched &&
@@ -26,9 +26,9 @@
       </mat-form-field>
     </div>
     <div>
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <mat-label>Preço</mat-label>
-        <input matInput formControlName="price" required />
+        <input matInput formControlName="price"  />
         <mat-error
           *ngIf="
             productForm.controls.price.touched &&
@@ -45,7 +45,7 @@
       </mat-form-field>
     </div>
     <div>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Categoria</mat-label>
         <mat-error
           *ngIf="
@@ -68,9 +68,9 @@
     </div>
 
     <div>
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <mat-label>Descrição</mat-label>
-        <input matInput formControlName="description" required />
+        <input matInput formControlName="description"  />
         <mat-error
           *ngIf="
             productForm.controls.description.touched &&
@@ -89,7 +89,7 @@
   </form>
 </mat-dialog-content>
 
-<mat-dialog-actions align="center">
+<mat-dialog-actions align="center" class="btn-content">
   <button
     mat-raised-button
     color="primary"
@@ -97,7 +97,7 @@
     (click)="handleSubmit()"
     [disabled]="!(productForm.valid && productForm.dirty)"
   >
-    {{ action }}
+   ADIDIONAR
   </button>
   <button mat-raised-button color="primary" mat-dialog-close>FECHAR</button>
 </mat-dialog-actions>

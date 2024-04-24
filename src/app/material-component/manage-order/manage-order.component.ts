@@ -45,22 +45,12 @@ export class ManageOrderComponent implements OnInit {
   ngOnInit(): void {
     this.ngxService.start();
     this.getCategorys();
+
     this.manageOrderForm = this.formBuilder.group({
-      name: [
-        null,
-        [Validators.required, Validators.pattern(GlobalConstants.nameRegex)],
-      ],
-      email: [
-        null,
-        [Validators.required, Validators.pattern(GlobalConstants.emailRegex)],
-      ],
-      contactNumber: [
-        null,
-        [
-          Validators.required,
-          Validators.pattern(GlobalConstants.contactNumberRegex),
-        ],
-      ],
+      
+      name: [null,[Validators.required, Validators.pattern(GlobalConstants.nameRegex)]],
+      email: [null,[Validators.required, Validators.pattern(GlobalConstants.emailRegex)]],
+      contactNumber: [null,[Validators.required,Validators.pattern(GlobalConstants.contactNumberRegex)]],
       paymentMethod: [null, [Validators.required]],
       product: [null, [Validators.required]],
       category: [null, [Validators.required]],
@@ -68,8 +58,6 @@ export class ManageOrderComponent implements OnInit {
       price: [null, [Validators.required]],
       total: [null, [Validators.required]],
     });
-
-
 
   }
 

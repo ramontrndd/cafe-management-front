@@ -6,17 +6,18 @@ import { CdkTableModule } from '@angular/cdk/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialRoutes } from './material.routing';
 import { MaterialModule } from '../shared/material-module';
-import { ViewBillProductsComponent } from './dialog/view-bill-products/view-bill-products.component';
+import { ViewBillProductsComponent } from './view-bill-products/view-bill-products.component';
 import { ConfirmationComponent } from './dialog/confirmation/confirmation.component';
-import { ChangePasswordComponent } from './dialog/change-password/change-password.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ManageCategoryComponent } from './manage-category/manage-category.component';
-import { CategoryComponent } from './dialog/category/category.component';
+import { CategoryComponent } from './category/category.component';
 import { ManageProductComponent } from './manage-product/manage-product.component';
-import { ProductComponent } from './dialog/product/product.component';
+import { ProductComponent } from './product/product.component';
 import { ConfirmationDeleteComponent } from './dialog/confirmation-delete/confirmation-delete.component';
 import { ManageOrderComponent } from './manage-order/manage-order.component';
 import { ViewBillComponent } from './view-bill/view-bill.component';
 import { ManageUserComponent } from './manage-user/manage-user.component';
+import { ConfirmationDeleteBillComponent } from './dialog/confirmation-delete-bill/confirmation-delete-bill.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { ManageUserComponent } from './manage-user/manage-user.component';
     ManageOrderComponent,
     ViewBillComponent,
     ManageUserComponent,
+    ConfirmationDeleteBillComponent,
   ],
 })
 export class MaterialComponentsModule {}

@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
-import { SnackbarService } from '../../../_services/snackbar.service';
-import { UserService } from '../../../_services/user.service';
+import { SnackbarService } from '../../_services/snackbar.service';
+import { UserService } from '../../_services/user.service';
 import { TitleStrategy } from '@angular/router';
-import { GlobalConstants } from '../../../shared/global-constants';
+import { GlobalConstants } from '../../shared/global-constants';
 
 @Component({
   selector: 'app-change-password',

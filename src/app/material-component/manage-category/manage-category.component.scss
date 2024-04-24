@@ -23,3 +23,21 @@ td , th {
   text-transform: uppercase;
   text-align: center;
 }
+
+@media screen and (min-width: 360px) and (max-width: 728px)  {
+
+  mat-card {
+    td, th {
+      font-size: .7rem;
+    }
+  }
+  .add-category__content{
+    flex-direction: column;
+
+  
+    > button {
+      font-size: .7rem;
+      margin-top: 15px;
+    }
+  }
+}

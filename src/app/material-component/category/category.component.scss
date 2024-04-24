@@ -1,0 +1,24 @@
+.mat-toolbar {
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.title-center {
+  flex: 1 1 auto;
+  text-align: center;
+}
+mat-form-field {
+  flex-direction: column;
+  display: flex;
+}
+
+@media screen and (min-width: 360px) and (max-width: 728px) {
+  .title-center {
+    font-size: 0.8rem;
+  }
+  mat-dialog-actions {
+    > button {
+      font-size: 0.7rem;
+    }
+  }
+}

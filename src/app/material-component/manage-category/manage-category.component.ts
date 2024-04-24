@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { CategoryService } from '../../_services/category.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { GlobalConstants } from '../../shared/global-constants';
-import { CategoryComponent } from '../dialog/category/category.component';
+import { CategoryComponent } from '../category/category.component';
 
 @Component({
   selector: 'app-manage-category',

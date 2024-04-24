@@ -2,7 +2,14 @@ mat-toolbar {
   width: auto;
   margin-bottom: 10px;
 }
+.card-container {
+  max-height: 400px;
+  overflow: auto;
+}
 
+.table-content {
+  overflow-x: auto;
+}
 .title-center {
   flex: 1 1 auto;
   text-align: center;
@@ -25,11 +32,25 @@ mat-card {
   justify-content: space-between;
   text-transform: uppercase;
 }
-td , th {
+td,
+th {
   text-align: center;
   text-transform: uppercase;
 }
-mat-slide-toggle{
-transform: translateY(-7px)
+mat-slide-toggle {
+  transform: translateY(-7px);
+}
 
+@media screen and (min-width: 360px) and (max-width: 728px) {
+  .add-product__content {
+    flex-direction: column;
+    > button {
+      margin-top: 15px;
+      font-size: 0.7rem;
+    }
+  }
+  td,
+  th {
+    font-size: 0.7rem;
+  }
 }
