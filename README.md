@@ -1,27 +1,40 @@
-# Cafe Management Front
+### Importante aviso!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
+O back-end está hospedado no render, tente fazer o login e espere 30segundo para o primeiro login.
+Faça seu cadastro e aprove seu cadastro como admin.
 
-## Development server
+login: admin@gmail.com <br>
+senha: admin 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Funcionalidades Principais:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Cadastro de Usuário:
+- Permite o registro de novos usuários, capturando informações básicas como nome, telefone, e-mail e senha.
+- Utiliza validação de formulário para garantir dados corretos e segurança durante o cadastro.
 
-## Build
+### Recuperação de Senha:
+- Oferece uma funcionalidade para usuários recuperarem suas senhas através de um processo seguro.
+- O usuário pode fornecer seu e-mail a sua senha de acesso.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Troca de Senha:
+- Permite que os usuários alterem suas senhas a qualquer momento, garantindo controle sobre sua própria segurança.
+- Implementa medidas de autenticação para garantir que apenas usuários autorizados possam realizar essa ação.
 
-## Running unit tests
+### Cadastro de Categorias e Produtos:
+- Facilita a organização de produtos através da criação de categorias personalizadas.
+- Permite adicionar, editar e excluir produtos dentro de suas respectivas categorias.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Tecnologias Utilizadas:
 
-## Running end-to-end tests
+### Angular 17:
+- Framework front-end robusto e escalável para desenvolvimento de interfaces de usuário dinâmicas e responsivas.
+- Aproveita recursos avançados para proporcionar uma experiência fluida aos usuários.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Angular Material:
+- Biblioteca de componentes UI que segue as diretrizes de Material Design, fornecendo uma aparência moderna e consistente.
+- Utilizada para criar uma interface de usuário atraente e funcional.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Node.js:
+- Ambiente de execução JavaScript do lado do servidor, ideal para a construção de APIs eficientes e escaláveis.
+- Fornece um back-end robusto para suportar as operações de gerenciamento de usuários, categorias e produtos.
