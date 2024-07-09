@@ -1,13 +1,5 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  HostListener,
-  Input,
-  OnDestroy,
-  computed,
-  signal,
-} from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component, computed, Input, OnDestroy, signal } from '@angular/core';
 import { jwtDecode } from 'jwt-decode';
 
 export type MenuItem = {
