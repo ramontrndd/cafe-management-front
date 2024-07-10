@@ -13,9 +13,8 @@ export class AuthService {
     if(!token){
       this.router.navigate(['/'])
       return false;
-    }
-    else{
-      return true;
+    }else{
+    return true;
     }
 
   }

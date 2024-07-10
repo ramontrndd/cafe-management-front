@@ -38,7 +38,7 @@ export class UserService {
     });
   }
   getUsers() {
-    return this.httpClient.get(this.url + '/user/get/');
+    return this.httpClient.get(this.url + '/user/get');
   }
 
   update(data: any) {
