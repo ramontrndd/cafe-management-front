@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://cafe-management-backend-mv4r.onrender.com',
+  apiUrl: 'https://backend-task-jokf.onrender.com',
 };
